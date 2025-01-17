@@ -1,0 +1,42 @@
+Service-Oriented Architecture (SOA) :-
+
+SOA emerged to address the challenges of large monolithic applications.
+It is an architectural style that focuses on loosely coupled software systems and interoperable services.
+SOA provides a way to design large systems by dividing them into smaller functions or services. These services are independently developed, deployed, and managed.
+
+Pros:
+i) Reusability of services: Services can be reused across different applications.
+ii) Better maintainability: Easier to maintain and update individual services.
+iii) Higher reliability: Faults in one service are less likely to affect the entire system.
+iv)  development: Teams can work on different services simultaneously.
+
+Cons:
+i) Complex management: Requires handling communication protocols between services.
+ii) High cost: Middleware and additional tools can make it expensive.
+iii) Extra development effort: Building and managing services add complexity.
+
+                        SERVER 1
++-------------------------------------------------+
+|             Presentation Layer (UI)             |
++-------------------------------------------------+
+                       |
+                    Middleware
+                       |
++-------------------------------------------------+
+|         Enterprise Service Bus (ESB)           |
++-------------------------------------------------+
+                       |
+                      SERVER 2
++-------------------------------------------------+
+|   +-----------------+  +-----------------+      |
+|   | Accounts Service |  | Cards Service   |      |
+|   +-----------------+  +-----------------+      |
+|                     +-------------------+       |
+|                     | Loans Service     |       |
+|                     +-------------------+       |
++-------------------------------------------------+
+                       |
+                       V
++-------------------------------------------------+
+|                  Supporting DB                  |
++-------------------------------------------------+
