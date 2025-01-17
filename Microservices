@@ -1,0 +1,42 @@
+Microservices
+
+Microservices are independently releasable services that are modeled around a business domain.
+Each service encapsulates specific functionality and makes it accessible to other services via networks.
+
+Pros:
+i) Easy to develop, test, and deploy.
+ii) Increased agility with the ability to scale horizontally.
+iii) Supports parallel development by multiple teams.
+iv) Modeled around a business domain for better alignment with organizational goals.
+
+Cons:
+i) Increased complexity in managing multiple services.
+ii) Higher infrastructure overhead.
+iii) Security concerns due to inter-service communication over networks.
+
+                          SERVER 1
++-------------------------------------------------+
+|             Presentation Layer (UI)             |
++-------------------------------------------------+
+                       |
+                       V
++-------------------------------------------------+
+| Multiple Microservices deployed in separate     |
+|           servers/containers                    |
+|   +-----------------+  +-----------------+      |
+|   | Microservice 1   |  | Microservice 2   |     |
+|   +-----------------+  +-----------------+      |
+|   +-----------------+  +-----------------+      |
+|   | Microservice 3   |  | Microservice 4   |     |
+|   +-----------------+  +-----------------+      |
+|                      ...                        |
++-------------------------------------------------+
+                       |
+                       V
++-------------------------------------------------+
+| Multiple Supporting DBs. Typically, each DB     |
+| is dedicated to a specific microservice.        |
+|   +---------+  +---------+  +---------+         |
+|   |   DB 1   |  |   DB 2   |  |   DB 3   |      |
+|   +---------+  +---------+  +---------+         |
++-------------------------------------------------+
