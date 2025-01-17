@@ -1,0 +1,31 @@
+
+Monolith Architecture :-
+
+Monolith means that in the early days, all system functionality was deployed on a single server.
+This architecture is referred to as a monolithic architecture.
+
+Pros:
+i) Simpler development and deployment for small applications.
+ii) Fewer cross-cutting concerns.
+iii) Better performance due to reduced network latency.
+
+Cons:
+i) Difficult to adopt new technologies.
+ii) Limited agility.
+iii) A single codebase is challenging to maintain.
+iv) Not fault-tolerant.
+v) Even tiny updates or feature developments require a full deployment.
+
++---------------------------+
+|      Presentation Layer   |  
+|           (UI)            |
++---------------------------+
+|     Business Logic Layer  |  
++---------------------------+
+|      Data Access Layer    |
++---------------------------+
+          |
+          V
++---------------------------+
+|       Supporting DB       |
++---------------------------+
