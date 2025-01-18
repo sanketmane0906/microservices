@@ -1,0 +1,15 @@
+Here comaprison for short reference has been done :-
+
+Features                          | Monolith       | SOA                   | Microservices
+-----------------------------------------------------------------------------------------
+Parallel Development              | Worst          | Better than monolith  | Good
+
+Agility                           | Worst          | Better than monolith  | Good
+
+Scalability                       | Worst          | Better than monolith  | Good
+
+Usability                         | Worst          | Better than monolith  | Good
+
+Complexity and Operational Overhead | Good          | Better than monolith  | Worst
+
+Security Concern and Performance  | Good           | Better than monolith  | Worst
