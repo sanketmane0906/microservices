@@ -1,0 +1,34 @@
+YAML stands for Yet Another Markup Language 
+
+It is human redable language.
+
+It can be saved by .yml or .yaml both have same meaning.
+
+spacing matters in YAML because YAML relies on indentation to represent hierarchy and structure. Improper spacing can lead to parsing errors or unintended behavior.
+
+Key Points About Spacing in YAML:
+Consistent Indentation:   Indentation must be consistent throughout the file.
+                          Spaces are used for indentation (not tabs).
+
+
+Recommended Indentation:  Typically, 2 spaces per level of hierarchy is recommended.
+                          You can use 4 spaces, but stick to one style consistently.
+
+
+No Tabs Allowed:  YAML does not support tab characters for indentation.
+                  Using tabs will result in an error like: found character that cannot start any token.
+
+
+Spacing Around Colons:  After a colon (:), you must add a space for the value.
+
+
+
+example :-
+
+spring:
+  application:
+    name: myApp
+
+server:
+  port: 8080
+  context-path: /api
