@@ -1,0 +1,38 @@
+The Strangler Fig Pattern is a software modernization strategy used to gradually replace an old system with a new one by incrementally refactoring and migrating functionality.
+
+This is design pattern used to migrate the monolith to microservice pattern.
+This pattern helps to migrate the monolith to microservices piece by piece without disturbing existing functionality by leveraging Domain Driven Design Approach.
+
+
+When to Use the Strangler Fig Pattern :-
+
+     i) Legacy System Modernization -
+              When you want to replace a monolithic system with a modern architecture (e.g., microservices, cloud-native applications).
+              Example: Migrating a legacy Java EE monolith to a Spring Boot microservices-based architecture.
+
+     ii) Reducing Risk in System Migration -
+              When a big-bang rewrite is too risky or costly.
+              Strangler Fig allows you to migrate incrementally, ensuring the old system remains functional.
+
+     iii) Minimizing Downtime -
+              If your application is mission-critical and cannot afford significant downtime, this pattern helps transition parts of the system while keeping it operational.
+
+     iv) Gradual API or Service Replacement -
+              When transitioning from an old API to a new one, you can route requests through an intermediary that gradually shifts traffic to the new API.
+
+     v)  Migrating to the Cloud -
+              When you need to migrate an on-premises system to the cloud in phases instead of a complete re-implementation.
+
+     vi) Refactoring Without Immediate Business Disruption -
+              If you need to improve code quality and architecture over time without stopping business operations.
+
+
+
+  This migration process involves 4 key steps :-
+
+      I) Identification
+      II) Transformation
+      III) co-existence
+      IV) Elimination
+
+
