@@ -1,0 +1,54 @@
+Suppose if you have 5 shirts 
+
+S    M     L   XL    XXL
+
+These are shirts with different size>.
+
+If you wear a L size shirt mean L is your shirt size and instead of L you wear XXL shirt then that shirt will be overfit for you and you may come in embarrassment situation.
+
+So this also same happen with microservice if you didn't take care of sizing of microservices.
+
+So before development start we need to identify the size of the microservice.
+
+How to identify the size of microservice :-
+
+There are two approaches -
+1) Domain Driven Sizing
+2) Event Sizing Storming
+
+1) Domain Driven Sizing :-
+
+Many years ago a talented software designer added an editing feature he called “Divide and Conquer” to a popular newspaper layout program. This feature was well-designed, but nobody used it. Here’s why:
+
+The name “divide and conquer” had no meaning in relation to newspaper layout.
+Nobody could explain what the feature did or why you would use it.
+Nobody asked for the feature and nobody wanted it.
+Essentially, more focus was placed on what could be done with the program instead of considering why it should be done. 
+
+Enter domain-driven design (DDD), an approach to software development that focuses on fully understanding the domain where the software will be applied. 
+When you understand the domain, you reduce the risk of adding features that your customers don’t need or want.
+
+      Advantages :-
+
+       i)   Business and development are aligned
+       ii)  Protects domain knowledge
+       iii) More flexibility
+       iv)  Easy to track
+       v)   Better application balance
+       vi)  Better code
+
+  (in case you need in detail explanation :-   https://www.lucidchart.com/blog/domain-driven-design-introduction )
+
+2) Event Sizing Storming :-
+
+Event storming drives greater understanding and productivity by simplifying the approach and including multiple levels of stakeholders in the business. 
+With the help of sticky notes and a willing group, you can reveal your business processes more efficiently and enjoyably.
+
+        Advantages :-
+        
+          i)    Fast
+          ii)   Straightforward
+          iii)  Engaging
+          iv)   Effective
+
+    (in case you need in detail explanation :-  https://www.lucidchart.com/blog/ddd-event-storming  )
