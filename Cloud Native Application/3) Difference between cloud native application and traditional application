@@ -1,0 +1,14 @@
+Difference between cloud native application and traditional application
+
+   Cloud Native Application               Traditional Application
+  ______________________________________________________________________
+i)  Predictable Behaviour                   Unpredictable Behaviour
+
+ii)  OS Abstarction                          OS Dependent
+
+iii)  Rapid Recovery                          Slow Recovery
+
+iv)  Continuous Delivery                     Waterfall Model
+
+v)  Right sized capacity                    Oversized and Dependent
+    and Independent    
