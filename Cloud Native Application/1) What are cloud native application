@@ -1,0 +1,14 @@
+Laymans definition :- (non technical definition)
+
+Cloud native applications are software applications which are designed in such way so they can take advantages of cloud native technologies.
+These applications are build to run optimized to run in cloud enviroments.
+
+The cloud native computing definition foundation definition :-
+
+Cloud-native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. 
+Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
+
+n simpler terms, cloud-native computing focuses on building applications that leverage the cloud's full potential. 
+It emphasizes scalability, flexibility, and automation, using technologies like containers (Docker, Kubernetes), microservices, and CI/CD pipelines to ensure rapid development, deployment, and management of applications.
+
+
