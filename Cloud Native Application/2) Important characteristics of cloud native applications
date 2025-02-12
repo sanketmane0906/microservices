@@ -1,0 +1,19 @@
+Important characteristics of cloud native applications :-
+
+1) Microservices Architecture – 
+                         Applications are built as loosely coupled, small, independent services, each responsible for a specific functionality. This enhances scalability, maintainability, and flexibility.
+
+2) Containerization – 
+                         Applications are packaged and deployed in containers (e.g., Docker, Kubernetes), making them lightweight, portable, and platform-independent across different cloud environments.
+
+3) Scalability & Elasticity – 
+                         Cloud-native applications can automatically scale up or down based on demand, ensuring efficient resource utilization.
+
+4) DevOps & CI/CD Practices – 
+                         Cloud-native apps follow DevOps principles for continuous integration, delivery, and deployment (CI/CD), enabling faster development cycles and automation.
+
+5) Resilience & Fault Tolerance – 
+                         These applications are designed to handle failures gracefully, ensuring high availability through redundancy, self-healing mechanisms, and distributed architectures.
+
+6) Cloud-Native Services – 
+                         They leverage cloud-native tools and managed services such as databases (e.g., AWS RDS), messaging services (e.g., Kafka), and serverless computing (e.g., AWS Lambda) to improve efficiency and scalability.
