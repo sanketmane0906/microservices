@@ -1,0 +1,45 @@
+The 12-Factor Methodology is a set of best practices for building scalable, maintainable, and portable applications, particularly cloud-native applications.
+It was developed by engineers at Heroku to guide the development of modern web applications.
+
+* Why Use the 12-Factor Methodology?
+    Better scalability (cloud-ready apps)
+    Easier maintenance and debugging
+    Improved DevOps and CI/CD
+    Seamless deployment to cloud platforms like AWS, GCP, Heroku, or Kubernetes
+
+* The 12 Factors:
+    1) Codebase – 
+              One codebase per application, tracked in version control (Git), with multiple deployments (staging, production, etc.).
+
+    2) Dependencies – 
+              Explicitly declare and isolate dependencies using a package manager (e.g., Maven/Gradle for Java, npm for Node.js).
+
+    3) Config – 
+              Store configuration in environment variables, not in the codebase.
+
+    4) Backing Services – 
+              Treat external services (databases, caches, queues) as attached resources that can be swapped without changing the code.
+
+    5) Build, Release, Run – 
+              Strictly separate the build (compilation), release (config + build), and run (execution) stages.
+
+    6) Processes – 
+              Run applications as stateless, share-nothing processes that store data in a database or external storage.
+
+    7) Port Binding – 
+              The application should expose services via port binding, allowing easy deployment as a standalone service (e.g., Spring Boot apps run on embedded Tomcat).
+
+    8) Concurrency – 
+              Scale applications by running multiple instances of lightweight, stateless processes.
+
+    9) Disposability – 
+              Applications should be fast to start and gracefully shut down to handle scaling and crashes efficiently.
+
+    10) Dev/Prod Parity – 
+              Keep development, staging, and production environments as similar as possible to avoid surprises.
+
+    11) Logs – 
+              Treat logs as event streams and do not manage log files manually. Use tools like ELK Stack, Prometheus, or cloud log aggregators.
+
+    12) Admin Processes – 
+              Run one-time admin tasks (like database migrations) separately from the main application processes.
