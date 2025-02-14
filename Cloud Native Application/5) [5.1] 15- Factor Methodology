@@ -1,0 +1,36 @@
+The 15-Factor Methodology is an evolution of the 12-Factor App principles, enhancing best practices for cloud-native applications. 
+
+Here’s an explanation of the first five factors :-
+
+1️⃣ One Codebase, One Database -
+        There should be one single codebase per application, stored in a version control system (e.g., Git).
+        The app may be deployed across multiple environments (dev, staging, production), but all share the same codebase.
+        A single application should have one database, avoiding multiple databases for different environments.
+        Example: If an e-commerce app has a main repository, it should not have separate repositories for different deployments. Instead, use configuration settings for environment-specific behavior.
+
+2️⃣ API First-
+        All functionalities of an application should be exposed via APIs, even if the frontend is developed alongside the backend.
+        This ensures modular development, where multiple clients (web, mobile, third-party integrations) can interact with the system efficiently.
+        Example: Instead of directly connecting a mobile app to the database, it should communicate via RESTful or GraphQL APIs.
+
+3️⃣ Dependency Management-
+        The application should explicitly declare and manage all dependencies via a dependency manager (e.g., Maven for Java, npm for Node.js).
+        Dependencies should not be implicitly installed at runtime or shared between apps.
+        Example: A Spring Boot app should use a pom.xml (Maven) or build.gradle (Gradle) file to define dependencies instead of relying on system-installed libraries.
+
+4️⃣ Design, Build, Release, Run-
+        The development cycle should be divided into four stages:
+          Design – Develop features and architecture.
+          Build – Convert source code into an executable package (e.g., JAR, Docker container).
+          Release – Combine the build with environment configurations and deploy it.
+          Run – Execute the application in a production-like environment.
+        Each stage should be separate and automated.
+        Example: A CI/CD pipeline can automate this process—GitHub Actions (Design & Build), Docker (Release), and Kubernetes (Run).
+
+5️⃣ Configuration, Credentials, and Code-
+        Configuration (environment-specific settings), credentials (API keys, passwords), and code should be kept separate.
+        Secrets should not be hardcoded in the source code; instead, use environment variables or a secrets manager (e.g., AWS Secrets Manager).
+        Example:
+              Bad Practice: Hardcoding database credentials inside the application.properties file.
+              Good Practice: Using environment variables like DATABASE_URL or a vault system to store credentials securely.
+
