@@ -1,0 +1,30 @@
+In this article i have written in detail about next 5 facotrs of 15-factor methodology -
+
+1️⃣ Logs :-
+      Applications should treat logs as event streams rather than writing them to a specific file.
+      Logs should be sent to stdout (console) so that external tools (like Splunk, ELK, or Datadog) can capture and process them.
+      This helps with monitoring, debugging, and troubleshooting in real-time.
+      🔹 Example: Instead of writing logs to a file (log.txt), an application should print logs to the console, and a logging system like Kibana can aggregate them.
+
+2️⃣ Disposability :-
+      Applications should start fast and shut down gracefully.
+      If a service crashes, it should restart quickly without manual intervention.
+      Ensures that apps recover from failures automatically.
+      🔹 Example: A Dockerized microservice should start in seconds and handle SIGTERM signals properly, so Kubernetes can restart it seamlessly.
+
+3️⃣ Backing Services :-
+      Any service the app depends on (like a database, message queue, or caching system) should be treated as an external resource.
+      The app should connect to these services using environment variables, not hardcoded values.
+      🔹 Example: Instead of storing database credentials in the code, use environment variables:
+          DATABASE_URL=postgres://user:password@db-host:5432/mydb
+
+4️⃣ Environment Parity :-
+      Keep all environments (development, staging, production) as identical as possible.
+      This reduces bugs caused by differences between environments.
+        🔹 Example: If you're using PostgreSQL in production, don't use SQLite in development—use Docker to run the same database locally.
+
+5️⃣ Administrative Processes :-
+      Any admin task (like database migrations, running cron jobs, or debugging) should be run as one-time processes, not baked into the app.
+      These tasks should be triggered manually when needed.
+        🔹 Example: Running a database migration command separately:
+            python manage.py migrate
