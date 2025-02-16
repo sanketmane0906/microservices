@@ -1,0 +1,31 @@
+Last 5 principles of 15- factor methodology :-
+
+1. Port Binding :-
+        Applications should be self-contained and expose services via port binding, instead of relying on external runtime injection.
+        This means an application should listen to a specific port (e.g., 8080) and serve requests from there.
+        This is essential for scalability, as different instances can run independently, each binding to a separate port.
+          Example: A Spring Boot app typically runs on port 8080 by default and can be changed via configuration.
+          
+2. Stateless Processes :-
+        Applications should be designed as stateless processes, meaning they do not store any user session or local state.
+        Instead, all state should be externalized to databases, caches, or storage services.
+        This enables horizontal scaling, where multiple instances can handle requests without dependency on a single machine.
+          Example: Using Redis to store session data instead of maintaining it in-memory in a server instance.
+          
+3. Concurrency :-
+        Applications should scale by running multiple instances (processes) concurrently rather than relying on a single, large instance.
+        This improves fault tolerance, responsiveness, and load distribution.
+          Example: A web application can have separate worker processes for handling HTTP requests and background tasks.
+        Technologies like Kubernetes or Docker Swarm help manage concurrency by running multiple containerized instances.
+        
+4. Telemetry :-
+        Monitoring and logging are critical to understanding an application's health, performance, and failures.
+        This includes logs, metrics, tracing, and alerting.
+          Example tools: Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), Datadog.
+          Example: In a Spring Boot application, Micrometer can be used to export metrics to Prometheus for monitoring.
+          
+5. Authentication and Authorization :-
+        Secure applications must have proper authentication (verifying user identity) and authorization (controlling access to resources).
+        Authentication can be done via OAuth, JWT, or OpenID Connect.
+        Authorization is usually role-based (RBAC) or attribute-based (ABAC).
+          Example: In a Spring Security setup, users may authenticate via OAuth2, and authorization can be enforced via JWT tokens.
