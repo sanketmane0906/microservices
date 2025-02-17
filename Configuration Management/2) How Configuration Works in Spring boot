@@ -1,0 +1,59 @@
+Externalized Configuration in Spring Boot:
+
+    Spring Boot allows you to externalize configuration, enabling the same application code to run in different environments with varying settings. 
+    This is achieved by utilizing various external configuration sources, including:
+
+Java Properties Files: 
+    i) Typically named application.properties.
+    ii) YAML Files: Such as application.yml.
+    iii) Environment Variables: Operating system-level variables.
+    iv) Command-Line Arguments: Parameters passed during application startup.
+
+Configuration Property Sources Order:
+
+    Spring Boot evaluates configuration properties in a specific order, allowing for sensible overriding of values. Properties are considered in the following sequence (from highest to lowest precedence):
+
+    I) Command-Line Arguments: Parameters passed directly to the application.
+    II) ServletConfig Init Parameters: Specific to the servlet configuration.
+    III) ServletContext Init Parameters: Global to the servlet context.
+    IV) JNDI Attributes: Retrieved from java:comp/env in JNDI.
+    V) Java System Properties: Accessed via System.getProperties().
+    VI) OS Environment Variables: Variables defined at the operating system level.
+    VII) Application Properties Files: Located in src/main/resources, such as application.properties or application.yml.
+    VIII) In this hierarchy, properties defined lower in the list can be overridden by those higher up. For example, a property set in application.properties can be overridden by an environment variable, which in turn can be overridden by a command-line argument.
+    IX) Accessing Properties in Spring Boot:
+
+Spring Boot provides several methods to access configuration properties within your application:
+
+    1) @Value Annotation: Injects a single property directly into a Spring-managed bean. 
+
+        @Value("${property.name}")
+        private String propertyName;
+
+    2) Environment Interface: Provides methods to access properties from the application's environment. You can autowire the Environment bean and retrieve property values programmatically.
+
+        @Autowired
+        private Environment environment;
+        public void someMethod() 
+        {
+            String propertyName = environment.getProperty("property.name");
+        }
+        
+    This method offers flexibility, especially when the property names are dynamic or determined at runtime.
+
+  3) @ConfigurationProperties Annotation: Ideal for binding multiple related properties into a structured object. This approach promotes type safety and reduces the need for repetitive @Value annotations.
+
+        @Component
+        @ConfigurationProperties(prefix = "app")
+        public class AppProperties 
+        {
+            private String name;
+            private String description;
+            // getters and setters
+        }
+
+    In your application.properties or application.yml:
+      app.name=MyApp
+      app.description=This is my application.
+
+    This method is particularly useful for grouping related properties and avoiding hardcoding within your codebase.
