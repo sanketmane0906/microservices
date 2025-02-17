@@ -1,0 +1,74 @@
+In this article we will see how we can read configuration which is described in application.properties/ application.yml file.
+
+Given below is application properties file and in which there is build version is present and i want to read that version.
+
+application.yml :-
+________________
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb  # In-memory H2 database
+    driver-class-name: org.h2.Driver
+    username: sa  # Default H2 username
+    password: 1234  # Default H2 password (empty by default)
+    platform: h2
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update  # Automatically updates the schema (use 'none' in production)
+    show-sql: true
+
+build:
+  version: "1.0"
+
+this is above file gives the info about configuration of a project 
+
+Now we want to read that build version number in controller class so lets do that
+
+Controller.java :-
+_________________
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api")  // Optional, to group endpoints under "/api"
+public class DemoController {
+
+    @Value("${build.version}")
+    private String buildVersion;
+
+    @GetMapping("/build-version")
+    public ResponseEntity<String> readingBuildVersion() {
+        return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
+    }
+}
+
+If you run this project then you will get version number in response
+
+Explanation :-
+
+@Value:-
+
+   The @Value annotation in Spring is used to inject values from properties files (like application.yml or application.properties) into fields of a Spring component.
+
+  How It Works:
+   It retrieves values from Spring environment properties or system properties.
+   Can be used with primitive types, Strings, collections, and even default values.
+
+${build.version} :- 
+
+  It is a Spring Boot property placeholder used to inject the value of build.version from the application's configuration file (application.yml or application.properties).
+
+  here we have used SpEL (Spring Expression language) build is key and version is value. like key value pair
