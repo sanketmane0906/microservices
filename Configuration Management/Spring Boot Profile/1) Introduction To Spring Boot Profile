@@ -1,0 +1,44 @@
+Spring Boot Profiles :-
+_____________________
+
+      Different environments have different configurations, for example, test, development, and QA, each having its own configuration.
+
+Why Use Spring Profiles?
+
+      Different environments need different settings.
+      Example: Database credentials, server ports, logging levels, etc.
+      Avoid hardcoding configurations in your main application.
+      Easily switch between environments without changing the code.
+      By default, in Spring Boot, the default profile is active. Whatever configuration you write in the application.yml file will be considered part of the default profile.
+
+      If you want to create another profile for QA environment or Production environment, 
+      you can do so by creating a new application.properties or application.yml file. However, you must follow the proper naming convention.
+
+For example :-
+
+      If you want to create a profile for QA, the file name should be -
+        application-qa.yml
+
+      If you want to create a profile for Test, the file name should be:
+        application-test.yml
+
+      If you create these two files, your application will have three profiles:
+        Default profile → application.yml
+        QA profile → application-qa.yml
+        Test profile → application-test.yml
+
+How to Activate a Profile?
+
+      To activate a profile, use the spring.profiles.active property.
+
+      Example:-
+        If you want to activate the Test profile, use:
+
+spring:
+  profiles:
+    active: test  # Here, 'test' is the name of the profile
+
+      This will make Spring Boot load the application-test.yml file for configuration.
+
+
+
