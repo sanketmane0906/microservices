@@ -1,0 +1,24 @@
+Introduction to Spring Cloud COnfig :-     
+
+    In this, we will build another application that will act as a centralized configuration server.
+    It will overcome all the drawbacks of Spring Boot profiles and externalized configuration.
+
+Centralized configuration revolves around two key points:
+
+    1) You are free to store all configuration and property files in any location (GitHub, database, file system).
+    2) The centralized configuration server will manage and distribute configuration data to multiple applications or services.
+   
+        Instead of each application storing its own configuration files separately, the server will fetch, organize, and provide the right configuration to each application as needed.
+        If a change is made to the configuration (e.g., in GitHub, a database, or the cloud), the server will update all connected applications automatically, ensuring consistency across the system.
+
++--------------------+        +---------------------------------+         +------------------------+
+|  Configuration     |        |  Centralized Configuration      |         |  Applications/Services |
+|  Sources           | -----> |  Server                         | ----->  |  (Spring Boot Apps,    |
+|  (GitHub, DB,      |        |  - Fetches Configurations       |         |   Microservices, etc.) |
+|  Cloud Storage)    |        |  - Manages and Distributes      |         |  - Receives Config     |
++--------------------+        +---------------------------------+         +------------------------+
+
+Explanation:
+    i) Configuration Sources: These could be GitHub repositories, databases, or cloud storage where configuration files are stored.
+    ii) Centralized Configuration Server: This server fetches, manages, and distributes configurations from the sources.
+    iii) Applications/Services: Multiple applications receive and apply the configuration from the central server.
