@@ -1,0 +1,12 @@
+Drawbacks of Spring Boot Profiles and Externalized Configuration 
+
+
+    1. Spring Boot Profile Limitations
+            Profiles must be defined inside the application itself, making them difficult to change dynamically.
+            Managing multiple profiles across different environments (dev, test, prod) can lead to configuration duplication.
+            No centralized control—each application must manage its own configuration separately.
+
+    2. Externalized Configuration Drawbacks
+            Externalized configurations (via application.properties or application.yml) must still be stored locally or in a fixed location.
+            Updating configurations requires manual redeployment if stored inside the application.
+            Hard to synchronize configuration changes across multiple microservices.
