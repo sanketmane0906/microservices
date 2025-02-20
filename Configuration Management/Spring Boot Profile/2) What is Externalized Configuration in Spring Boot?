@@ -1,0 +1,13 @@
+What is Externalized Configuration in Spring Boot?
+    Externalized configuration allows you to separate application settings from the application code so that you can modify them without redeploying the application. 
+    Spring Boot provides multiple ways to externalize configuration, such as:
+
+      1) application.properties or application.yml (inside src/main/resources/)
+      2) Command-line arguments (--server.port=8081)
+      3) Environment variables (SPRING_APPLICATION_NAME=myapp)
+
+    If you give the configuration 3 at a time CLI will get higher preference then Enviromental Variable then the application.properties
+    CLI> Enviromental variable> application.properties
+
+
+    ************here command how to do config with cli and enviromental variable will come later it didnt worked for me thats why it it pending ******************************
