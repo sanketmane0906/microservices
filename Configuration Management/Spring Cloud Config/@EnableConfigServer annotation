@@ -1,0 +1,17 @@
+You have to add the @EnableConfigServer annotation on top of the main class of the project
+
+@EnableConfigServer :-
+    The @EnableConfigServer annotation is used in Spring Cloud Config to turn a Spring Boot application into a centralized configuration server.
+
+What Does It Do?
+    1) Enables Config Server Functionality :-
+          It allows the application to serve configuration properties from a central location (like Git, a database, or local files) to multiple microservices.
+
+    2) Manages External Configurations :-
+          Instead of hardcoding properties in each microservice, configurations are stored centrally and can be updated dynamically.
+
+    3) Supports Different Profiles and Environments :-
+          The config server can serve environment-specific settings (e.g., dev, prod) based on the requesting service.
+
+    4) Secures and Standardizes Config Management :-
+          You can implement encryption for sensitive properties like database passwords, API keys, etc.
