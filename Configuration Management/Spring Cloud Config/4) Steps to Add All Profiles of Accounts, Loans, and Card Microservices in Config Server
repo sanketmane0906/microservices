@@ -1,0 +1,17 @@
+Steps to Add All Profiles of Accounts, Loans, and Card Microservices in Config Server
+
+Step 1: 
+        Create the Config Folder
+        Inside the src/main/resources/ directory, create a folder named config.
+        This folder will store configuration files for different microservices and environments.
+Step 2: 
+        Add Profiles for Accounts, Loans, and Card Microservices
+        Place all configuration profiles related to the Accounts, Loans, and Card microservices inside the config folder.
+        Each microservice should have separate files for different environments (e.g., qa, prod).
+Step 3: 
+        Rename the Profiles Correctly
+
+        The default profile for the Accounts microservice should be renamed as follows:
+           i) accounts.yml (Default profile for Accounts)
+           ii) accounts-prod.yml (Production profile for Accounts)
+           iii) accounts-qa.yml (QA profile for Accounts)
