@@ -1,0 +1,6 @@
+If you want to create config server then you ned to add following dependency in your config server project -
+
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-config-server</artifactId>
+</dependency>
