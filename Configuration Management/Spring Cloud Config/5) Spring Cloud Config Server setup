@@ -1,0 +1,30 @@
+application.yml of configserver project :-
+
+server:
+  port: 8071
+
+spring: 
+  application:
+    name: "configserver" 
+    
+  profiles:
+    active: native
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: "classpath:/config"
+
+
+explanation :-
+
+1) profiles.active: native :-
+    This sets the active Spring profile to native, meaning the config server will fetch configurations from the local file system or classpath,
+    instead of using a remote Git repository (which is the default in Spring Cloud Config Server).
+    When running the Config Server, this profile ensures it looks for configuration files stored locally rather than in a Git repository.
+
+ 2) cloud.config.server.native.search-locations: "classpath:/config" :-
+    This specifies where the configuration files are stored when using the native profile.
+    classpath:/config means the configuration files should be loaded from the config folder inside the application's resources directory.
+    Instead of pulling configurations from an external Git repo, the server will search for .properties or .yml files inside src/main/resources/config/
