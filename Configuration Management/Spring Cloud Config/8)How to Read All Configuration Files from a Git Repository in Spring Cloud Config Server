@@ -1,0 +1,59 @@
+How to Read All Configuration Files from a Git Repository in Spring Cloud Config Server :-
+
+If you store all your configuration files inside a Git repository, Spring Cloud Config Server will fetch them and serve them to your microservices. 
+
+Here’s how it works:
+
+1️⃣ Configuring the Spring Cloud Config Server
+    To enable Git-based configuration storage, you need to specify the Git repository location in the application.yml file of the Config Server:
+
+server:
+  port: 8071  # Config Server runs on port 8071
+
+spring: 
+  application:
+    name: "configserver" 
+    
+  profiles:
+    active: git  # Activates Git-based configuration
+
+  cloud:
+    config:
+      server:
+        git:  
+          uri: "https://github.com/eazybytes/eazybytes-config.git"  # Git repo URL
+          default-label: "main"  # Fetch config from the 'main' branch
+          timeout: 5  # Timeout in seconds for Git operations
+          clone-on-start: true  # Clone the repo when Config Server starts
+          force-pull: true  # Always pull the latest changes from Git
+
+2️⃣ How It Works
+    When the Config Server Starts
+
+      It connects to the Git repository at https://github.com/eazybytes/eazybytes-config.git.
+      It fetches configuration files from the main branch (or the branch specified in default-label).
+      It clones the repo locally inside the Config Server to cache configurations.
+      It pulls the latest updates whenever a request is made (because of force-pull: true).
+    
+    When a Microservice Requests Configuration
+
+      The microservice (e.g., accounts service) sends a request to the Config Server.
+      The Config Server looks up the configuration file inside the Git repo.
+      The response is returned in JSON format.
+
+3️⃣ Folder Structure in Git Repository
+    Inside the Git repository (https://github.com/eazybytes/eazybytes-config.git), you should have configuration files for different microservices:
+
+eazybytes-config/
+   ├── accounts-prod.yml   # Config for 'accounts' service, 'prod' profile
+   ├── accounts-dev.yml    # Config for 'accounts' service, 'dev' profile
+   ├── loans-prod.yml      # Config for 'loans' service, 'prod' profile
+   ├── loans-dev.yml       # Config for 'loans' service, 'dev' profile
+   ├── application.yml     # Default config for all services
+
+
+4️⃣ Fetching Configuration from the Config Server
+    For a Specific Service and Profile
+    If the "accounts" microservice with the "prod" profile wants to fetch its configuration, it makes a request to:
+
+    http://localhost:8071/accounts/prod
