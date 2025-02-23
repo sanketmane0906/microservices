@@ -1,0 +1,45 @@
+* Issues in actuator refresh :-
+
+      The refresh actuator path also working fine but there was only issue you nees to execurte refresh api for every microservice.
+      
+      example  :- (http://localhost:9090/actuator/refresh)
+            If i done the updation in account and in card microservice then i need to execute account/refresh api  and also in card/refresh api
+            the and only then it will refract me changes
+
+* Steps to Implement Spring Cloud Bus for Dynamic Config Refresh :-
+
+     Step 1: 
+         Add Dependencies in Config Server and Client Services
+         Both the Config Server and Client Services must include the Spring Cloud Bus AMQP dependency in their pom.xml:
+
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+</dependency>
+
+        spring-cloud-starter-bus-amqp → Enables Spring Cloud Bus using RabbitMQ as the message broker.
+        
+        Required for both the Spring Cloud Config Server and client services that need dynamic updates.
+
+    Step 2: 
+        Set Up RabbitMQ (Message Broker)
+        RabbitMQ is used to broadcast configuration changes across multiple microservices.
+
+        ✅ Configure RabbitMQ in application.yml (for both Config Server & Clients)
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    
+        host: localhost → RabbitMQ is running locally.
+        
+        port: 5672 → Default port for RabbitMQ messaging.
+        username/password → Default credentials (guest/guest).
+
+      Step 3: 
+          Trigger Configuration Refresh Without Restarting
+
+          http://localhost:8080/actuator/bus-refresh
