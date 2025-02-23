@@ -1,0 +1,15 @@
+If you place all your configuration files inside the file system, how will you read them?
+
+Previously, when we stored configuration files inside the Spring project, we specified the path within the project where the files were located.
+
+Similarly, when storing configuration files outside the project (in the file system), we need to specify the correct file path.
+
+The path should start with "file:///", followed by the actual directory where the configuration files are stored. This provides the correct file location for reading the configuration files.
+
+Example configuration for reading from the file system:
+
+cloud:
+  config:
+    server:
+      native:
+        search-locations: "file:///F:/config"
