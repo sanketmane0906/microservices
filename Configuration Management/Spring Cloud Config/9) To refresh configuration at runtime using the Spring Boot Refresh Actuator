@@ -1,0 +1,38 @@
+To refresh configuration at runtime using the Spring Boot Refresh Actuator -
+
+1. Enable Actuator and Refresh Endpoint (in microservice)
+Ensure you have the Spring Boot Actuator dependency in your pom.xml:
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+
+In application.properties or application.yml, expose the refresh endpoint:
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
+//havent done yet but still there is option
+2. Use @RefreshScope for Dynamic Config Updates
+Mark the class where the configuration variables are used with @RefreshScope. This ensures that the bean is reloaded when you trigger a refresh.
+
+Example:
+
+@RefreshScope
+@Component
+@ConfigurationProperties(prefix = "myapp")
+public class MyAppConfig {
+    private String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+}
