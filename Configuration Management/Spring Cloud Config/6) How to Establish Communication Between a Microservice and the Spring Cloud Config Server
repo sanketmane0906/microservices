@@ -1,0 +1,58 @@
+How to Establish Communication Between a Microservice and the Spring Cloud Config Server :-
+
+To enable communication between your microservice and the Spring Cloud Config Server, you need to add the Spring Cloud Client dependency in your respective microservice.
+
+Step 1: Add the Dependency
+        
+        Include the Spring Cloud dependency management in your pom.xml:
+
+        <dependencyManagement>
+         <dependencies>
+           <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>${spring-cloud.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+           </dependency>
+        </dependencies>
+       </dependencyManagement>
+
+Step 2: Specify the Spring Cloud Version
+        
+        You also need to define the Spring Cloud version in your pom.xml:
+
+        <properties>
+            <spring-cloud.version>2024.0.0</spring-cloud.version>
+        </properties>
+
+Step 3: Configure the Microservice to Use the Config Server
+        
+        Now, import the Spring Cloud Config Server settings in your microservice by adding the following property in application.yml:
+
+        spring:
+           config:
+              import: "optional:configserver:http://localhost:8071/"
+
+        This tells the microservice to fetch configuration properties from the Config Server running on port 8071.
+
+Step 4: Specify Which Configuration to Read
+
+        After importing the Config Server, specify which configuration the microservice should use:
+
+        spring:
+          application:
+            name: "accounts"
+          profiles:
+            active: "prod"
+
+    In this example:
+
+          The microservice is named "accounts".
+          It will fetch production-related configurations (prod profile) from the Config Server.
+
+
+
+
+
+
