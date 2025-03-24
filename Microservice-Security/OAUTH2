@@ -1,0 +1,39 @@
+OAuth2 Overview
+
+Why Use OAuth2?
+  OAuth2 solves the problem of secure authorization without sharing user credentials.
+
+  Under Google, multiple applications provide different services but use a single account (ID & password) for authentication.
+
+Introduction to OAuth2
+  Stands for Open Authorization.
+
+  It is free and open-source.
+
+Advantages of OAuth2
+  Supports all types of applications (web, mobile, desktop, IoT, etc.).
+
+  Separates authentication logic from the application.
+
+  No need to share credentials (passwords) with third-party apps.
+
+OAuth2 Key Terms (Jargons)
+ 1) Resource Owner
+
+    The end user (you) who owns the data.
+
+ 2) Client
+
+    The application (website or app) that wants to access the user’s data.
+
+ 3) Authorization Server
+
+    The server that knows about the resource owner and handles authentication.
+
+ 4) Resource Server
+
+    The server where the actual user data is stored, which the client wants to access.
+
+ 5) Scopes
+
+    Define what data the client can access using an access token.
