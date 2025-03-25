@@ -1,0 +1,21 @@
+Overview
+  OpenID Connect (OIDC) is an authentication protocol built on top of OAuth 2.0.
+
+  It allows clients to verify a user's identity and obtain basic profile information via an ID Token.
+
+Key Features
+  Provides authentication (OAuth 2.0 mainly handles authorization).
+
+  Issues a new ID Token containing user details.
+
+  Works with OAuth 2.0 flows for secure identity verification.
+
+  Supports Single Sign-On (SSO) across applications.
+
+How It Works
+  User Authentication: The user logs in via an Identity Provider (IdP).
+
+  ID Token Issued: After authentication, the IdP sends an ID Token to the client.
+
+  User Info Access: Clients can use the ID Token to retrieve user details.
+
